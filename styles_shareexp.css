@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: lightyellow;
+}
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(79,100,124);
+    height: 200px;
+}
+main {
+    display: flex;
+    flex-grow: 1;
+}
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+.post {
+    margin: 10px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 300px;
+    width: 100%;
+    background-color: #b9c1cb;
+}
+.post img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #b9c1cb; /* Set your desired background color here */
+}
+#fileInput{
+    height: 50px;
+}
+#descriptionInput{
+    height: 100px;
+}
+#uploadButton {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#uploadForm {
+    text-align: center;
+    margin: 20px;
+    width: 200px;
+    padding: 20px;
+    background-color: #b9c1cb;
+}
+
+#postButton {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#navbar ul {
+    margin: 0;
+    padding: 10px;
+    list-style-type: none;
+    text-align: left;
+    background-color: #b9c1cb;
+}
+
+#navbar {
+    width: 100%; /* Set the width to 100% to span the full width of the screen */
+}
+
+#navbar ul li {
+    display: inline;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    padding: .2em 1em;
+    color: rgb(79,100,124);
+    background-color: #b9c1cb;
+}
+
+#navbar ul li a:hover {
+    color: #000000;
+    background-color: #fff;
+}

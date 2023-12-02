@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif ;
+}
+.banner{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(79,100,124);
+    height: 200px;
+    width: 100lh;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: lightyellow;
+    margin: 0;
+}
+ .container{
+    max-width: 1200px;
+    width: 100lh ;
+    background: #fff ;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-top: 50px;
+    background-color: #b9c1cb;
+} 
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+}
+.container form .user-info
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-info .input-box{
+    margin: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.user-info .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-info .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+form .product-details .product-for{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .product-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+.product-details .category label{
+    display: flex;
+    align-items: center;
+}
+.product-details .category .dot{
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#dot-1 :checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    border-color : #d9d9d9;
+    background : #9b9b9b;
+}
+form input[type = "radio"]{
+    display: none;
+}
+form .button{
+    height: 45px;
+    margin: 45px 0;
+}
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+@media (max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+    form .user-info.input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .product-details .category{
+        width: 100%;
+    }
+    .container form .user-info{
+        max-height: 300px;
+        overflow-x: scroll;
+        overflow-y: scroll;
+    }
+}
+#navbar ul {
+    margin: 0;
+    padding: 7px;
+    list-style-type: none;
+    text-align: left;
+    background-color: #b9c1cb;
+}
+
+#navbar {
+    width: 100%; 
+}
+
+#navbar ul li {
+    display: inline;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    padding: .2em 1em;
+    color: rgb(79,100,124);
+    background-color: #b9c1cb;
+}
+
+#navbar ul li a:hover {
+    color: #000000;
+    background-color: #fff;
+}
+

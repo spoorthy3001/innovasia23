@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share_experience</title>
+    <link rel="stylesheet" href="styles_shareexp.css">
+</head>
+<body>
+
+    <div class="banner"><img src="logo.jpg" alt="logo" ></div>
+    <div id="navbar"> 
+        <ul> 
+          <li><a href="home.html">HOME</a></li> 
+          <li><a href="sell_product.html">SELL</a></li> 
+          <li><a href="buy_product.html">BUY</a></li> 
+          <li><a href="share_experience.html">SHARE YOUR EXPERIENCE</a></li> 
+        </ul></div>
+    <main>
+        <div id="gallery"></div>
+
+        <div id="uploadForm">
+            <input type="file" id="fileInput" accept="image/*">
+            <textarea id="descriptionInput" placeholder="Enter description for your post"></textarea>
+            <button onclick="uploadImage()" id="postButton">Post</button>
+        </div>
+    </main>
+
+    <script>
+        function uploadImage() {
+            const fileInput = document.getElementById('fileInput');
+            const descriptionInput = document.getElementById('descriptionInput');
+            const gallery = document.getElementById('gallery');
+
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const imageUrl = e.target.result;
+                    const description = descriptionInput.value || 'No description';
+
+                    const post = document.createElement('div');
+                    post.className = 'post';
+                    post.innerHTML = `
+                        <img src="${imageUrl}" alt="Uploaded Image">
+                        <p>${description}</p>
+                        <div class="post-actions">
+                            <button onclick="likePost(this)" id="likebutton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="red">
+                            <path d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.36 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 2.86-3.4 5.75-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            Like</button>
+                            <button onclick="commentPost(this)" id="commentbutton">Comment</button>
+                        </div>
+                        <div class="comments"></div>
+                        <p>Uploaded on ${new Date().toLocaleString()}</p>
+                    `;
+
+                    gallery.appendChild(post);
+                    fileInput.value = ''; // Clear the file input
+                    descriptionInput.value = ''; // Clear the description input
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function likePost(button) {
+            const post = button.closest('.post');
+            const likeButton = post.querySelector('.post-actions button:nth-child(1)');
+            const likeCount = post.querySelector('.like-count') || document.createElement('span');
+            
+            let count = parseInt(likeCount.innerText) || 0;
+            count++;
+
+            likeCount.innerText = count === 1 ? '1 like' : `${count} likes`;
+            
+            if (!likeCount.classList.contains('like-count')) {
+                likeCount.className = 'like-count';
+                post.querySelector('.post-actions').appendChild(likeCount);
+            }
+        }
+
+        function commentPost(button) {
+            const post = button.closest('.post');
+            const commentsSection = post.querySelector('.comments');
+            const commentInput = document.createElement('textarea');
+            commentInput.placeholder = 'Add a comment';
+            const commentButton = document.createElement('button');
+            commentButton.innerText = 'Post Comment';
+            commentButton.onclick = function() {
+                const commentText = commentInput.value;
+                if (commentText) {
+                    const comment = document.createElement('p');
+                    comment.innerText = commentText;
+                    commentsSection.appendChild(comment);
+                    commentInput.value = '';
+                }
+            };
+
+            commentsSection.appendChild(commentInput);
+            commentsSection.appendChild(commentButton);
+        }
+    </script>
+
+</body>
+</html>

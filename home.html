@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+   <link rel="stylesheet" href="styles_home.css">
+</head>
+<body>
+
+    <div class="banner">
+      <img id="logo" src="logo.jpg" alt="Your Logo"></div>
+    
+    <div id="navbar"> 
+  <ul> 
+	<li><a href="home.html">HOME</a></li> 
+	<li><a href="sell_product.html">SELL</a></li> 
+	<li><a href="buy_product.html">BUY</a></li> 
+	<li><a href="share_experience.html">SHARE YOUR EXPERIENCE</a></li> 
+	
+  </ul> </div>
+  <marquee behavior="scroll"  direction="right"> 
+    <div id="scrolling-text">
+        <h1 style="font-style: italic; color: rgb(79,100,124);">Welcome to TrendXTradition</h1>
+    </div>
+    </marquee>
+    
+   
+<div class="container">
+   <div class="search-box">
+      <i class="bx bx-search"></i>
+      <input type="text" placeholder=" &#128269 Search for country">
+   </div>
+   <div class="images">
+      <div class="image-box" data-name="india">
+         <a href="india.html" target="_blank">
+            <img src="Countries\india.avif" alt="" width="200" height="200"></a>
+            <h3>INDIA</h3>
+      </div>
+      <div class="image-box" data-name="china">
+            <a href="china.html" target="_blank">
+            <img src="Countries\china.jpg" width="200" height="200"alt=""></a>
+            <h3>CHINA</h3>
+      </div>
+      <div class="image-box" data-name="nepal">
+         <a href="" target="_blank">
+            <img src="Countries\nepal.jpg" alt="" width="200" height="200"></a>
+            <h3>NEPAL</h3>
+      </div>
+      <div class="image-box" data-name="france">
+         <a href="" target="_blank">
+            <img src="Countries\france.jpg" alt="" width="200" height="200"></a>
+            <h3>FRANCE</h3>
+      </div>
+      <div class="image-box" data-name="korea">
+         <a href="" target="_blank">
+            <img src="Countries\korea.jpg" alt="" width="200" height="200"></a>
+            <h3>KOREA</h3>
+      </div>
+      <div class="image-box" data-name="aregentina">
+         <a href="" target="_blank">
+            <img src="Countries\aregentina.jpeg.jpg" alt="" width="200" height="200">
+         </a>
+         <h3>ARGENTINA</h3>
+      </div>
+      <div class="image-box" data-name="bhutan">
+         <a href="" target="_blank">
+            <img src="Countries\bhutan.jpeg.jpg" alt="" width="200" height="200">
+         </a>
+         <h3>BHUTAN</h3>
+      </div>
+      <div class="image-box" data-name="denmark">
+         <a href="" target="_blank">
+            <img src="Countries\denmark.jpeg.jpg" alt="" width="200" height="200">
+         </a>
+         <h3>DENMARK</h3>
+      </div>
+      <div class="image-box" data-name="egypt">
+         <a href="" target="_blank">
+            <img src="Countries\egypt.jpeg.jpg" alt="" width="200" height="200">
+         </a>
+         <h3>EGYPT</h3>
+      </div>
+      <div class="image-box" data-name="finland">
+         <a href="" target="_blank">
+            <img src="Countries\finland.jpeg.jpg" alt="" width="200" height="200">
+         </a>
+         <h3>FINLAND</h3>
+      </div>
+      <div class="image-box" data-name="georgia">
+         <a href="" target="_blank">
+            <img src="Countries\georgia.jpeg.jpg" alt="" width="200" height="200">
+         </a>
+         <h3>GEORGIA</h3>
+      </div>
+      <div class="image-box" data-name="hungary">
+         <a href="" target="_blank">
+            <img src="Countries\hungary.jpeg.jpg" alt="" width="200" height="200">
+         </a>
+         <h3>HUNGARY</h3>
+      </div>
+      <div class="image-box" data-name="iceland">
+         <a href="" target="_blank">
+            <img src="Countries\iceland.jpeg.jpg" alt="" width="200" height="200">
+         </a>
+         <h3>ICELAND</h3>
+      </div>
+   </div>
+   
+<div class="about-us">
+        <h1>About Us</h1>
+        <p>
+            Discover the rich blend of tradition and fashion at our online platform. 
+            We curate the finest collection of traditional attire and modern fashion, 
+            offering you a unique shopping experience.
+        </p>
+        <p>
+            Our commitment is to bring you the best of both worlds, embracing cultural 
+            heritage while staying on trend with contemporary styles. Explore our diverse 
+            range of clothing and accessories that reflect the beauty of tradition and 
+            the allure of fashion.
+        </p>
+      </div>
+
+<script>
+   const search = document.querySelector('.search-box input'),
+         images=document.querySelectorAll(".image-box");
+
+   search.addEventListener("keyup", e=>{
+      if(e.key == "Enter"){
+         let searchValue =  search.value,
+         value = searchValue.toLowerCase();
+         images.forEach(image =>{
+            if(value === image.dataset.name){
+               return image.style.display = "block";
+            }
+            image.style.display = "none";
+         })
+      }
+   });
+   search.addEventListener("keyup", () =>{
+      if(search.value != "") return;
+      images.forEach(image =>{
+         image.style.display = "block"
+      })
+   })
+</script>
+
+</body>
+</html>

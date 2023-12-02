@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles_sell.css">
+
+        <title>Sell your Products</title>
+    </head>
+    <body>
+        <div class="banner"><img src="logo.jpg" alt="Logo"></div>
+    <div id="navbar"> 
+        <ul> 
+          <li><a href="home.html">HOME</a></li> 
+          <li><a href="sell_product.html">SELL</a></li> 
+          <li><a href="buy_product.html">BUY</a></li> 
+          <li><a href="share_experience.html">SHARE YOUR EXPERIENCE</a></li> 
+          
+        </ul></div>
+        <div class="container">
+            <div class="title">Enter the details of the product you wish to sell:</div>
+            <form action="connect.php" method="post">
+                <div class="user-info">
+                    <div class="input-box">
+                        <span class="details">Enter your Full Name</span>
+                        <input type="text" placeholder="Enter your Full Name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Enter your Email</span>
+                        <input type="email" placeholder="Enter your Email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Enter your Phone no</span>
+                        <input type="text" placeholder="Enter your Phone no" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Enter your Address</span>
+                        <input type="text" placeholder="Enter your Address" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="fileInput">Upload the Image of the Product:</label>
+                        <input type="file" name="fileInput" id="fileInput" accept="image/*">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Enter the Price of the Product:</span>
+                        <input type="text" placeholder="Enter Price" required>
+                    </div>
+                </div>
+                <div class="product-details"><!--Gender-details to product-details -->
+                    <input type="radio" name="gender" id="dot-1">
+                    <input type="radio" name="gender" id="dot-2">
+                    <input type="radio" name="gender" id="dot-3">
+                    <span class="product-for">Choose type of clothing: </span><!--gender-title to product-for-->
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Unisex</span>
+                        </label>
+                    </div>
+                </div>
+            <div class="buttom">
+                <input type="submit" value="Upload your product">
+            </div>
+            </form>
+        </div>
+    </body>
+</html>
